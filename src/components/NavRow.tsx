@@ -11,7 +11,11 @@ type NavRowProps = {
 }
 
 /**
- * سطرِ بالای صفحه: نشانه در ابتدا، یک کار در انتها.
+ * سطرِ بالای صفحه: یک کار در ابتدا، نشانه در انتها.
+ *
+ * در فیگما جایشان برعکس بود — نشانه در ابتدا و کار در انتها. جابه‌جا شد چون
+ * chevron در RTL به سمتِ راست اشاره می‌کند و باید لبهٔ راست بنشیند، و برای
+ * اینکه نشانه بینِ ایستگاه‌ها نپرد، هر سه صفحه با هم عوض شدند.
  *
  * توضیحِ کامپوننت در فیگما خودش نوشته که ناحیهٔ لمسِ آیکن ۲۴ است و زیرِ
  * حداقلِ ۴۸ می‌افتد. اینجا گلیف همان ۲۴ می‌ماند تا طرح عوض نشود، ولی دکمه
@@ -20,13 +24,11 @@ type NavRowProps = {
 export function NavRow({ icon, actionLabel, onAction }: NavRowProps) {
   return (
     <div className="flex w-full items-center justify-between">
-      <img src={logo} alt="هم‌قدم" className="size-7 shrink-0" />
-
       <button
         type="button"
         onClick={onAction}
         aria-label={actionLabel}
-        className="-me-3 flex size-12 shrink-0 items-center justify-center"
+        className="-ms-3 flex size-12 shrink-0 items-center justify-center"
       >
         <img
           src={icon === 'close' ? closeIcon : chevronRightIcon}
@@ -34,6 +36,8 @@ export function NavRow({ icon, actionLabel, onAction }: NavRowProps) {
           className="size-6"
         />
       </button>
+
+      <img src={logo} alt="هم‌قدم" className="size-7 shrink-0" />
     </div>
   )
 }
