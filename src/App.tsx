@@ -14,14 +14,7 @@ import { StateScreen } from './screens/StateScreen'
 import { Station1, type Station1Answer } from './screens/Station1'
 import { Station2, type Station2Answer } from './screens/Station2'
 
-type Step =
-  | 'station1'
-  | 'consent'
-  | 'station2'
-  | 'loading'
-  | 'results'
-  | 'empty'
-  | 'quit'
+type Step = 'station1' | 'station2' | 'loading' | 'results' | 'empty' | 'quit'
 
 /** چقدر اسکلتِ فهرست بماند. کوتاه‌تر از این دیده نمی‌شود، بلندتر آزاردهنده است. */
 const LOADING_MS = 1200
@@ -43,6 +36,8 @@ function App() {
   const [answer2, setAnswer2] = useState<Station2Answer>()
   const [skipped1, setSkipped1] = useState(false)
   const [isOffline, setIsOffline] = useState(!navigator.onLine)
+  // رضایت‌نامه ایستگاهِ جدا نیست؛ شیتی است که روی ایستگاه ۱ بالا می‌آید.
+  const [consentOpen, setConsentOpen] = useState(false)
 
   // هر ایستگاه از بالا شروع می‌شود؛ وگرنه کاربر وسطِ صفحهٔ بعدی می‌افتد.
   useEffect(() => {
@@ -133,42 +128,44 @@ function App() {
 
   if (step === 'station1') {
     return (
-      <Station1
-        initial={answer1}
-        onContinue={(answer) => {
-          setAnswer1(answer)
-          setSkipped1(false)
-          // چیزی گفته نشده یعنی چیزی برای نگه داشتن نیست؛ رضایت‌نامه رد می‌شود.
-          setStep(
-            answer.tagIds.length + answer.ownWords.length > 0
-              ? 'consent'
-              : 'station2',
-          )
-        }}
-        onSkip={() => {
-          setAnswer1(undefined)
-          setSkipped1(true)
-          setStep('station2')
-        }}
-        onClose={() => setStep('quit')}
-      />
-    )
-  }
+      <>
+        <Station1
+          initial={answer1}
+          onContinue={(answer) => {
+            setAnswer1(answer)
+            setSkipped1(false)
+            // چیزی گفته نشده یعنی چیزی برای نگه داشتن نیست؛ شیت بالا نمی‌آید.
+            if (answer.tagIds.length + answer.ownWords.length > 0) {
+              setConsentOpen(true)
+            } else {
+              setStep('station2')
+            }
+          }}
+          onSkip={() => {
+            setAnswer1(undefined)
+            setSkipped1(true)
+            setStep('station2')
+          }}
+          onClose={() => setStep('quit')}
+        />
 
-  if (step === 'consent') {
-    return (
-      <Consent
-        kept={kept}
-        onAgree={() => {
-          log('رضایت‌نامه · موافقم', kept)
-          setStep('station2')
-        }}
-        onContinueWithout={() => {
-          log('رضایت‌نامه · ادامه بدون نگه داشتن')
-          setStep('station2')
-        }}
-        onClose={() => setStep('quit')}
-      />
+        {consentOpen && (
+          <Consent
+            kept={kept}
+            onAgree={() => {
+              log('رضایت‌نامه · موافقم', kept)
+              setConsentOpen(false)
+              setStep('station2')
+            }}
+            onContinueWithout={() => {
+              log('رضایت‌نامه · ادامه بدون نگه داشتن')
+              setConsentOpen(false)
+              setStep('station2')
+            }}
+            onDismiss={() => setConsentOpen(false)}
+          />
+        )}
+      </>
     )
   }
 
