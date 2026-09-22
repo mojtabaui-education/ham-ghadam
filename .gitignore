@@ -1,24 +1,45 @@
-# Logs
+# وابستگی‌ها و خروجیِ بیلد
+node_modules
+dist
+dist-ssr
+
+# کشِ ابزارها. tsBuildInfoFile در tsconfig زیرِ node_modules/.tmp است و با
+# همان خطِ بالا می‌رود، ولی اگر جایش عوض شد این خط نگهش می‌دارد.
+*.tsbuildinfo
+.vite
+.cache
+coverage
+
+# لاگ‌ها
 logs
 *.log
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# متغیرهای محیطی. اگر روزی کلیدی وارد پروژه شد، اینجا می‌ماند — ریپو
+# عمومی است و یک کامیتِ اشتباه کافی است.
+.env
+.env.*
+!.env.example
 *.local
 
-# Editor directories and files
+# ویرایشگرها
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# فایل‌هایی که سیستم‌عامل خودش می‌سازد
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# فایلِ CNAME در public/ عمداً کامیت می‌شود، چون دامنهٔ اختصاصی باید در هر
+# دیپلوی همراهِ خروجی برود. اگر برداشته شود، دامنه در GitHub Pages پاک
+# می‌شود. اینجا نوشته شده تا کسی به‌اشتباه ignoreاش نکند.
