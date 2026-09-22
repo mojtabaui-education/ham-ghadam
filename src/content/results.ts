@@ -8,6 +8,7 @@ export const results = {
   cardAction: 'دیدن زمان‌های آزاد',
   quit: 'بستن مسیر',
   back: 'برگشتن به پرسشِ قبل',
+  loading: 'فهرست دارد آماده می‌شود.',
 }
 
 /**
