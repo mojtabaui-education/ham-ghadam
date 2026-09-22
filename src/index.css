@@ -1,0 +1,155 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------
+   فونت · Meem
+   فقط سه وزنی که در طرح استفاده شده بارگذاری می‌شود.
+   نسخه‌های .ttf در همین پوشه‌اند و با scripts/ttf2woff2.mjs ساخته می‌شوند.
+   --------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Meem';
+  src: url('./assets/fonts/Meem-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Meem';
+  src: url('./assets/fonts/Meem-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Meem';
+  src: url('./assets/fonts/Meem-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------
+   توکن‌ها · یک‌به‌یک از متغیرهای فیگما
+   نامِ فیگما در کامنتِ روبه‌روی هر خط آمده تا ردیابی بماند.
+   فاصله‌ها توکن جدید نمی‌خواهند: مقیاسِ پیش‌فرضِ تیلویند ۴px است،
+   پس space/4→1، space/8→2، space/12→3، space/16→4، space/24→6،
+   space/32→8، space/64→16، space/72→18.
+   --------------------------------------------------------------- */
+
+@theme {
+  --font-sans: 'Meem', system-ui, sans-serif;
+
+  --color-page: #f3efe7; /* role/bg-page */
+  --color-surface: #fffdf8; /* role/bg-surface */
+  --color-muted: #dcd5c9; /* role/bg-muted */
+  --color-inverse: #14120f; /* role/bg-inverse */
+
+  --color-ink: #14120f; /* role/text-primary · role/icon-default */
+  --color-ink-secondary: #3a342c; /* role/text-secondary */
+  --color-ink-muted: #6b6257; /* role/text-muted · color/ink-500 */
+  --color-accent: #a8421c; /* role/text-accent · role/accent-strong */
+  --color-on-inverse: #fffdf8; /* role/text-on-inverse */
+  --color-border: #dcd5c9; /* role/border-default */
+
+  --radius-inset: 6px; /* radius/inset */
+  --radius-control: 12px; /* radius/control */
+  --radius-card: 16px; /* radius/card */
+  --radius-pill: 999px; /* radius/pill */
+
+  --text-12: 12px; /* size/text/12 */
+  --text-13: 13px; /* size/text/13 */
+  --text-14: 14px; /* size/text/14 */
+  --text-15: 15px; /* size/text/15 */
+  --text-20: 20px; /* size/text/20 */
+}
+
+/* ---------------------------------------------------------------
+   سبک‌های تایپوگرافی · از استایل‌های متنیِ فیگما
+   --------------------------------------------------------------- */
+
+@utility type-question {
+  /* heading/question */
+  font-size: var(--text-20);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@utility type-card-title {
+  /* title/card */
+  font-size: var(--text-15);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@utility type-body {
+  /* body/default */
+  font-size: var(--text-15);
+  font-weight: 400;
+  line-height: 1;
+}
+
+@utility type-label {
+  /* label/default */
+  font-size: var(--text-14);
+  font-weight: 500;
+  line-height: 1;
+}
+
+@utility type-button {
+  /* button/label */
+  font-size: var(--text-15);
+  font-weight: 700;
+  line-height: 1;
+}
+
+@utility type-caption {
+  /* caption/default */
+  font-size: var(--text-13);
+  font-weight: 400;
+  line-height: 1;
+}
+
+@utility type-caption-paragraph {
+  /* caption/paragraph */
+  font-size: var(--text-13);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@utility type-meta {
+  /* caption/meta */
+  font-size: var(--text-12);
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* ---------------------------------------------------------------
+   پایه
+   --------------------------------------------------------------- */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* روی iOS هر ورودی با فونت کوچک‌تر از ۱۶px باعث زوم می‌شود.
+     اندازه‌های طرح کوچک‌ترند، پس زوم را از راهِ viewport نمی‌بندیم
+     (که دسترس‌پذیری را خراب می‌کند) و به‌جایش ورودی‌ها ۱۶px می‌مانند. */
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+  }
+}
