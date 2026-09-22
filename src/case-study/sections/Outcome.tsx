@@ -19,7 +19,7 @@ export function Outcome() {
             <div
               key={stat.latin}
               className={[
-                'flex h-full flex-col items-end gap-1.5 rounded-card p-[clamp(20px,1.67vw,32px)] text-end',
+                'flex h-full flex-col items-start gap-1.5 rounded-card p-[clamp(20px,1.67vw,32px)] text-start',
                 dark ? 'bg-inverse text-on-inverse' : 'bg-surface',
               ].join(' ')}
             >
@@ -61,7 +61,7 @@ export function Outcome() {
         })}
       </div>
 
-      <div className="flex w-full flex-col items-end gap-3 rounded-card bg-muted p-[clamp(20px,1.88vw,36px)] text-end">
+      <div className="flex w-full flex-col items-start gap-3 rounded-card bg-muted p-[clamp(20px,1.88vw,36px)] text-start">
         <p className="text-[clamp(20px,1.35vw,26px)] leading-[1.7] font-bold text-ink">
           {outcome.core.title}
         </p>

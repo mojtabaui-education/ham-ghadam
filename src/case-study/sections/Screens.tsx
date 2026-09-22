@@ -21,10 +21,10 @@ export function Screens() {
       {screens.flows.map((flow) => (
         <article
           key={flow.tag}
-          className="flex w-full flex-col items-end gap-6 border-t border-on-inverse/15 pt-6"
+          className="flex w-full flex-col items-start gap-6 border-t border-on-inverse/15 pt-6"
         >
-          <div className="flex w-full flex-col items-end gap-1.5 text-end">
-            <div className="flex flex-wrap items-center justify-end gap-3">
+          <div className="flex w-full flex-col items-start gap-1.5 text-start">
+            <div className="flex flex-wrap items-center justify-start gap-3">
               <span
                 className="text-[12px] leading-[1.3] font-semibold tracking-[1.4px] text-accent"
                 dir="ltr"

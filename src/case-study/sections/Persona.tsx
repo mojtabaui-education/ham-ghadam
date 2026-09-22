@@ -28,7 +28,7 @@ export function Persona() {
         {persona.pair.map((side) => (
           <div
             key={side.kicker}
-            className="flex h-full flex-col items-end gap-3 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-end"
+            className="flex h-full flex-col items-start gap-3 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-start"
           >
             <p
               className="w-full text-[12px] leading-[1.3] font-semibold tracking-[2px] text-accent"
@@ -49,7 +49,7 @@ export function Persona() {
         ))}
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2.5 rounded-card bg-muted p-7 text-end">
+      <div className="flex w-full flex-col items-start gap-2.5 rounded-card bg-muted p-7 text-start">
         <p
           className="text-[12px] leading-[1.3] font-medium tracking-[1.6px] text-ink-secondary"
           dir="ltr"

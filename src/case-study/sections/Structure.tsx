@@ -16,7 +16,7 @@ export function Structure() {
         {structure.stations.map((station) => (
           <div
             key={station.kicker}
-            className="flex h-full flex-col items-end gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-end"
+            className="flex h-full flex-col items-start gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-start"
           >
             <p
               className="w-full text-[12px] leading-[1.3] font-semibold tracking-[1.6px] text-accent"
@@ -38,7 +38,7 @@ export function Structure() {
       </div>
 
       <div className="grid w-full grid-cols-1 gap-[clamp(12px,1vw,20px)] md:grid-cols-2">
-        <div className="flex h-full flex-col items-end gap-3 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-end">
+        <div className="flex h-full flex-col items-start gap-3 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-start">
           <p className="w-full text-[clamp(16px,1vw,19px)] leading-[1.6] font-bold text-ink">
             {structure.budget.title}
           </p>
@@ -47,7 +47,7 @@ export function Structure() {
           </p>
         </div>
 
-        <div className="flex h-full flex-col items-end gap-3 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-end text-on-inverse">
+        <div className="flex h-full flex-col items-start gap-3 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-start text-on-inverse">
           <p
             className="w-full text-[12px] leading-[1.3] font-medium tracking-[1.6px] opacity-60"
             dir="ltr"
@@ -63,11 +63,11 @@ export function Structure() {
         </div>
       </div>
 
-      <div className="flex w-full flex-col items-end gap-3.5">
+      <div className="flex w-full flex-col items-start gap-3.5">
         <p className="text-[clamp(16px,1vw,19px)] leading-[1.6] font-bold text-ink">
           {structure.leftOut.title}
         </p>
-        <div className="flex w-full flex-wrap justify-end gap-2.5">
+        <div className="flex w-full flex-wrap justify-start gap-2.5">
           {structure.leftOut.items.map((item) => (
             <span
               key={item}

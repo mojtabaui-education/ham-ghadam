@@ -16,7 +16,7 @@ export function Next() {
         {next.steps.map((step) => (
           <div
             key={step.rank}
-            className="flex h-full flex-col items-end gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-end"
+            className="flex h-full flex-col items-start gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-start"
           >
             <p className="w-full text-[15px] leading-[1.5] font-bold text-accent">
               {step.rank}
@@ -31,7 +31,7 @@ export function Next() {
         ))}
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-end">
+      <div className="flex w-full flex-col items-start gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-start">
         <p className="text-[clamp(16px,1vw,19px)] leading-[1.65] font-bold text-ink">
           {next.ui.title}
         </p>
@@ -40,7 +40,7 @@ export function Next() {
         </p>
       </div>
 
-      <footer className="flex w-full flex-col items-end gap-2.5 pt-9 text-end text-ink-muted">
+      <footer className="flex w-full flex-col items-start gap-2.5 pt-9 text-start text-ink-muted">
         <p className="max-w-[1400px] text-[15px] leading-[1.95]">
           {next.footer.body}
         </p>

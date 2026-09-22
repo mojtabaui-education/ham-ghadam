@@ -19,7 +19,7 @@ function AuditRow({
   const failPercent = total === 0 ? 0 : Math.max((fail / total) * 100, 1.25)
 
   return (
-    <div className="flex w-full flex-col items-end gap-2 lg:flex-row-reverse lg:items-center lg:gap-4">
+    <div className="flex w-full flex-col items-start gap-2 lg:flex-row lg:items-center lg:gap-4">
       <p className="text-[16px] leading-[1.75] text-ink lg:w-[300px] lg:shrink-0">
         {row}
       </p>
@@ -39,7 +39,7 @@ function AuditRow({
         </p>
       </div>
 
-      <p className="min-w-0 flex-1 text-end text-[15px] leading-[1.9] text-ink-secondary">
+      <p className="min-w-0 flex-1 text-start text-[15px] leading-[1.9] text-ink-secondary">
         {note}
       </p>
     </div>
@@ -57,13 +57,13 @@ export function Audit() {
         lede={audit.lede}
       />
 
-      <div className="flex w-full flex-col items-end gap-4 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)]">
-        <div className="hidden w-full flex-row-reverse gap-4 text-[13px] leading-[1.5] text-ink-muted lg:flex">
-          <p className="w-[300px] shrink-0 text-end">{audit.columns.row}</p>
+      <div className="flex w-full flex-col items-start gap-4 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)]">
+        <div className="hidden w-full flex-row gap-4 text-[13px] leading-[1.5] text-ink-muted lg:flex">
+          <p className="w-[300px] shrink-0 text-start">{audit.columns.row}</p>
           <p className="w-[clamp(140px,12.5vw,240px)] shrink-0 text-center">
             {audit.columns.split}
           </p>
-          <p className="min-w-0 flex-1 text-end">{audit.columns.note}</p>
+          <p className="min-w-0 flex-1 text-start">{audit.columns.note}</p>
         </div>
 
         {audit.rows.map((row) => (
@@ -72,7 +72,7 @@ export function Audit() {
       </div>
 
       <div className="grid w-full grid-cols-1 gap-[clamp(12px,1vw,20px)] md:grid-cols-2">
-        <div className="flex h-full flex-col items-end gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-end">
+        <div className="flex h-full flex-col items-start gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-start">
           <p className="w-full text-[clamp(16px,1vw,19px)] leading-[1.65] font-bold text-ink">
             {audit.changed.title}
           </p>
@@ -81,7 +81,7 @@ export function Audit() {
           </p>
         </div>
 
-        <div className="flex h-full flex-col items-end gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-end">
+        <div className="flex h-full flex-col items-start gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-start">
           <p className="w-full text-[clamp(16px,1vw,19px)] leading-[1.65] font-bold text-ink">
             {audit.kept.title}
           </p>

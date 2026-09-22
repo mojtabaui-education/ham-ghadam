@@ -19,7 +19,7 @@ export function Held() {
             <div
               key={item.tag}
               className={[
-                'flex h-full flex-col items-end gap-3 rounded-card p-[clamp(20px,1.67vw,32px)] text-end',
+                'flex h-full flex-col items-start gap-3 rounded-card p-[clamp(20px,1.67vw,32px)] text-start',
                 dark ? 'bg-inverse text-on-inverse' : 'bg-surface',
               ].join(' ')}
             >
@@ -48,7 +48,7 @@ export function Held() {
                   [held.labels.cost, item.cost],
                 ] as const
               ).map(([label, value]) => (
-                <div key={label} className="flex w-full flex-col items-end gap-0.5">
+                <div key={label} className="flex w-full flex-col items-start gap-0.5">
                   <p
                     className={[
                       'text-[12px] leading-[1.6]',

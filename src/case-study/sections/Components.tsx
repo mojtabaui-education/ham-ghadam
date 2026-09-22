@@ -29,12 +29,12 @@ function Specimen({
   children: ReactNode
 }) {
   return (
-    <div className="flex h-full flex-col items-end gap-3 rounded-card bg-surface p-6 text-end">
+    <div className="flex h-full flex-col items-start gap-3 rounded-card bg-surface p-6 text-start">
       <p className="w-full text-[12px] leading-[1.4] font-medium text-accent" dir="ltr">
         {name}
       </p>
       <p className="w-full text-[13px] leading-[1.8] text-ink-muted">{note}</p>
-      <div className="w-full max-w-[345px] self-end pt-2">{children}</div>
+      <div className="w-full max-w-[345px] self-start pt-2">{children}</div>
     </div>
   )
 }
@@ -89,7 +89,7 @@ export function Components() {
         </Specimen>
 
         <Specimen name="chip" note={c.notes.chip}>
-          <div className="flex justify-end">
+          <div className="flex justify-start">
             <Chip label="عصرها" onDismiss={noop} />
           </div>
         </Specimen>
@@ -107,7 +107,7 @@ export function Components() {
         </Specimen>
 
         <Specimen name="card-field" note={c.notes.cardField}>
-          <div className="flex w-[145px] flex-col gap-1 text-end">
+          <div className="flex w-[145px] flex-col gap-1 text-start">
             <p className="type-caption text-ink-muted">مدت جلسه</p>
             <p className="type-body text-ink-secondary">۴۵ دقیقه</p>
           </div>
@@ -204,7 +204,7 @@ export function Components() {
         </Specimen>
       </div>
 
-      <div className="flex w-full flex-col items-end gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-end">
+      <div className="flex w-full flex-col items-start gap-2.5 rounded-card bg-muted p-[clamp(20px,1.67vw,32px)] text-start">
         <p className="text-[clamp(16px,1vw,19px)] leading-[1.6] font-bold text-ink">
           {c.gap.title}
         </p>

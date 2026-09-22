@@ -20,17 +20,17 @@ export function Bridge() {
 
       <div className="flex w-full flex-col gap-0.5">
         <div className="hidden w-full gap-6 rounded-control bg-page px-7 py-3.5 text-[13px] leading-[1.5] text-ink-muted lg:flex">
-          <p className="w-[430px] shrink-0 text-end">
+          <p className="w-[430px] shrink-0 text-start">
             {bridge.columns.decision}
           </p>
-          <p className="min-w-0 flex-1 text-end">{bridge.columns.where}</p>
+          <p className="min-w-0 flex-1 text-start">{bridge.columns.where}</p>
           <p className="w-[300px] shrink-0">{bridge.columns.technical}</p>
         </div>
 
         {bridge.rows.map((row) => (
           <div
             key={row.technical}
-            className="flex w-full flex-col gap-3 rounded-control bg-surface px-7 py-[22px] text-end lg:flex-row lg:gap-6"
+            className="flex w-full flex-col gap-3 rounded-control bg-surface px-7 py-[22px] text-start lg:flex-row lg:gap-6"
           >
             <p className="text-[clamp(15px,0.89vw,17px)] leading-[1.75] font-bold text-ink lg:w-[430px] lg:shrink-0">
               {row.decision}
@@ -52,7 +52,7 @@ export function Bridge() {
         {bridge.flags.map((flag) => (
           <div
             key={flag.title}
-            className="flex h-full flex-col items-end gap-2 rounded-card bg-page p-7 text-end"
+            className="flex h-full flex-col items-start gap-2 rounded-card bg-page p-7 text-start"
           >
             <p className="w-full text-[clamp(15px,0.89vw,17px)] leading-[1.7] font-bold text-ink">
               {flag.title}

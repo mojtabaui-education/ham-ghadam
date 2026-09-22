@@ -28,7 +28,7 @@ export function Assumptions() {
       </ul>
 
       <div className="grid w-full grid-cols-1 gap-[clamp(12px,1vw,20px)] lg:grid-cols-2">
-        <div className="flex flex-col items-end gap-3.5 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-on-inverse">
+        <div className="flex flex-col items-start gap-3.5 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-on-inverse">
           <p
             className="text-[12px] leading-none font-medium tracking-[1.6px] opacity-60"
             dir="ltr"
@@ -44,7 +44,7 @@ export function Assumptions() {
           ))}
         </div>
 
-        <div className="flex flex-col items-end gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-end">
+        <div className="flex flex-col items-start gap-2.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)] text-start">
           <p className="text-[clamp(16px,1vw,19px)] leading-[1.6] font-bold text-ink">
             {assumptions.aside.title}
           </p>

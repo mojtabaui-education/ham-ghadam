@@ -17,7 +17,7 @@ export function Lessons() {
         {lessons.items.map((item) => (
           <div
             key={item.tag}
-            className="flex h-full flex-col items-end gap-2.5 rounded-card bg-page p-[clamp(20px,1.67vw,32px)] text-end"
+            className="flex h-full flex-col items-start gap-2.5 rounded-card bg-page p-[clamp(20px,1.67vw,32px)] text-start"
           >
             <p
               className="w-full text-[12px] leading-[1.4] font-medium text-accent"

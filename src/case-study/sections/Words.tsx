@@ -13,14 +13,14 @@ export function Words() {
       />
 
       <div className="grid w-full grid-cols-1 gap-[clamp(12px,1vw,20px)] lg:grid-cols-2">
-        <div className="flex h-full flex-col items-end gap-3.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)]">
+        <div className="flex h-full flex-col items-start gap-3.5 rounded-card bg-surface p-[clamp(20px,1.67vw,32px)]">
           <p className="text-[12px] leading-[1.3] font-medium tracking-[1.4px] text-ink-muted">
             {words.keptKicker}
           </p>
 
           {words.kept.map((row) => (
             <div key={row.key} className="flex w-full items-start gap-3.5">
-              <p className="min-w-0 flex-1 text-end text-[16px] leading-[1.8] text-ink">
+              <p className="min-w-0 flex-1 text-start text-[16px] leading-[1.8] text-ink">
                 {row.text}
               </p>
               <p
@@ -36,7 +36,7 @@ export function Words() {
           ))}
 
           <div className="flex w-full items-start gap-3.5 pt-3">
-            <p className="min-w-0 flex-1 text-end text-[15px] leading-[1.85] text-ink-muted">
+            <p className="min-w-0 flex-1 text-start text-[15px] leading-[1.85] text-ink-muted">
               {words.empty.text}
             </p>
             <p
@@ -48,13 +48,13 @@ export function Words() {
           </div>
         </div>
 
-        <div className="flex h-full flex-col items-end gap-3.5 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-end text-on-inverse">
+        <div className="flex h-full flex-col items-start gap-3.5 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-start text-on-inverse">
           <p className="text-[12px] leading-[1.3] font-medium tracking-[1.4px] opacity-60">
             {words.rejectedKicker}
           </p>
 
           {words.rejected.map((row) => (
-            <div key={row.text} className="flex w-full flex-col items-end gap-0.5">
+            <div key={row.text} className="flex w-full flex-col items-start gap-0.5">
               <p className="w-full text-[16px] leading-[1.8] opacity-85">
                 {row.text}
               </p>

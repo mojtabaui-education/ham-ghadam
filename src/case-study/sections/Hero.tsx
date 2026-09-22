@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="flex w-full flex-col items-end gap-[clamp(18px,1.56vw,30px)] px-[clamp(20px,6.25vw,120px)] pt-[clamp(56px,7.8vw,150px)] pb-[clamp(56px,5.7vw,110px)] text-end"
+      className="flex w-full flex-col items-start gap-[clamp(18px,1.56vw,30px)] px-[clamp(20px,6.25vw,120px)] pt-[clamp(56px,7.8vw,150px)] pb-[clamp(56px,5.7vw,110px)] text-start"
     >
       <img src={logo} alt="هم‌قدم" className="size-[clamp(48px,3.75vw,72px)]" />
 
@@ -27,7 +27,7 @@ export function Hero() {
         {hero.lede}
       </p>
 
-      <div className="flex flex-wrap justify-end gap-3">
+      <div className="flex flex-wrap justify-start gap-3">
         {hero.meta.map((item) => (
           <Pill key={item}>{item}</Pill>
         ))}

@@ -29,7 +29,7 @@ export function Section({
     <section
       id={id}
       className={[
-        'flex w-full flex-col items-end px-[clamp(20px,6.25vw,120px)] py-[clamp(48px,5vw,96px)]',
+        'flex w-full flex-col items-start px-[clamp(20px,6.25vw,120px)] py-[clamp(48px,5vw,96px)]',
         tone === 'dark' ? 'bg-inverse text-on-inverse' : '',
       ].join(' ')}
       style={{ gap: `clamp(${Math.round(gap * 0.6)}px, ${gap / 19.2}vw, ${gap}px)` }}
@@ -78,7 +78,7 @@ export function SectionHead({
 }) {
   const dark = tone === 'dark'
   return (
-    <header className="flex w-full flex-col items-end gap-4 text-end">
+    <header className="flex w-full flex-col items-start gap-4 text-start">
       <Eyebrow number={number} label={label} tone={tone} />
 
       <h2
@@ -138,7 +138,7 @@ export function Card({
   children?: ReactNode
 }) {
   return (
-    <div className="flex flex-col items-end gap-2 rounded-card bg-surface p-[clamp(16px,1.25vw,24px)] text-end">
+    <div className="flex flex-col items-start gap-2 rounded-card bg-surface p-[clamp(16px,1.25vw,24px)] text-start">
       {kicker && (
         <p className="text-[13px] leading-[1.5] font-medium text-accent">
           {kicker}
@@ -171,7 +171,7 @@ export function Callout({
   note?: ReactNode
 }) {
   return (
-    <div className="flex w-full flex-col items-end gap-3 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-end text-on-inverse">
+    <div className="flex w-full flex-col items-start gap-3 rounded-card bg-inverse p-[clamp(20px,1.67vw,32px)] text-start text-on-inverse">
       {kicker && (
         <p
           className="text-[12px] leading-none font-medium tracking-[1.6px] opacity-60"
@@ -215,7 +215,7 @@ export function NumberedItem({
   children: ReactNode
 }) {
   return (
-    <li className="flex w-full items-start gap-4 rounded-card bg-surface p-5 text-end">
+    <li className="flex w-full items-start gap-4 rounded-card bg-surface p-5 text-start">
       <span className="shrink-0 text-[15px] leading-[1.8] font-bold whitespace-nowrap text-accent">
         {number}
       </span>
@@ -235,7 +235,7 @@ export function LabeledField({
   value: ReactNode
 }) {
   return (
-    <div className="flex w-full flex-col items-end gap-1 text-end">
+    <div className="flex w-full flex-col items-start gap-1 text-start">
       <p className="text-[13px] leading-[1.6] opacity-55">{label}</p>
       <p className="w-full text-[clamp(15px,0.89vw,17px)] leading-[1.9]">
         {value}
@@ -257,7 +257,7 @@ export function StepCard({
   method: string
 }) {
   return (
-    <div className="flex h-full flex-col items-end gap-2.5 rounded-card bg-surface p-[clamp(16px,1.25vw,24px)] text-end">
+    <div className="flex h-full flex-col items-start gap-2.5 rounded-card bg-surface p-[clamp(16px,1.25vw,24px)] text-start">
       <p
         className="text-[12px] leading-none font-medium tracking-[1.2px] text-accent"
         dir="ltr"
@@ -295,8 +295,8 @@ export function SplitRow({
   body: string
 }) {
   return (
-    <div className="flex w-full flex-col gap-4 rounded-card bg-surface p-6 text-end lg:flex-row-reverse lg:gap-7">
-      <div className="flex flex-col items-end gap-1.5 lg:w-[520px] lg:shrink-0">
+    <div className="flex w-full flex-col gap-4 rounded-card bg-surface p-6 text-start lg:flex-row lg:gap-7">
+      <div className="flex flex-col items-start gap-1.5 lg:w-[520px] lg:shrink-0">
         <p
           className="text-[12px] leading-[1.3] font-medium tracking-[1.2px] whitespace-nowrap text-accent"
           dir="ltr"
